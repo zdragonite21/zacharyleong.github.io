@@ -1,0 +1,484 @@
+body, html {
+  background-color:#eeffc7;
+}
+
+
+#canvas {
+  position: relative;
+  height: 600px;
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  box-shadow: 5px 5px 0px rgb(83, 83, 83);
+}
+
+#computer {
+  height: 100px;
+  width: 150px;
+}
+
+#computer1 {
+  position: relative;
+  height: 85px;
+  width: 135px;
+  left: 7.5px;
+  top: 7.5px;
+  background-color: rgb(73, 73, 73);
+}
+
+#computer2 {
+  position: relative;
+  height: 20px;
+  width: 150px;
+  border-radius: 0px 0px 10px 10px;
+  z-index: 1;
+}
+
+#computer3 {
+  position: relative;
+  height: 40px;
+  width: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 320px;
+  left: -30px;
+}
+
+#computer4 {
+  position: relative;
+  height: 10px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 320px;
+  left: -30px;
+}
+
+#computerdot {
+  height: 10px;
+  width: 10px
+}
+
+#computerdot2 {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  left: 117.5px;
+  top: 233px;
+}
+
+#desk {
+  position: relative;
+  height: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 320px;
+  z-index: 1;
+}
+
+
+#main {
+  position: absolute;
+  height: 580px;
+  width: 300px;
+  left: -30px;
+}
+
+#clock {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 10px solid rgb(218, 86, 86);
+  left: 20px;
+  top: 30px;
+}
+
+#clock-dot {
+  position: relative;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 34px;
+}
+
+#hourhand {
+  position: relative;
+  height:5px;
+  width: 40px;
+  border-radius: 5px;
+  top: 45px;
+  left: 50px;
+}
+
+#minhand {
+  position: relative;
+  height:4.5px;
+  width: 45px;
+  border-radius: 5px;
+  transform: rotate(300deg);
+  top: 60px;
+  left: 16px;
+}
+
+#phoneparent {
+  position: relative;
+  height: 580px;
+  width: 300px;
+  transform: rotate(15deg);
+  left: 3px;
+}
+
+#Pphone {
+  position: relative;
+  height: 410px;
+  width: 210px;
+}
+
+#phone {
+  position: relative;
+  height: 400px;
+  width: 200px;
+  left: 5px;
+  top: 5px;
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#phone-screen {
+  position: relative;
+  height: 300px;
+  width: 180px;
+  z-index: 2;
+}
+
+#speaker {
+  position: relative;
+  height: 7px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 35px;
+  z-index: 2;
+  border-radius: 30px;
+}
+
+#home-button {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  top: 372px;
+  z-index: 2;
+}
+
+#dotty {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  top: 33.5px;
+  left: 60px;
+  z-index: 2;
+}
+
+#button {
+  position: absolute;
+  width: 15px;
+  height: 40px;
+  border-radius: 10px;
+  top: 90px;
+  left: 195px;
+  z-index: 1;
+}
+
+#button-shadow {
+  position: absolute;
+  width: 15px;
+  height: 40px;
+  border-radius: 10px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.200);
+}
+
+#button2 {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  border-radius: 5px;
+  top: 70px;
+  z-index: 1;
+}
+
+#button3 {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  top: 115px;
+  left: -2px;
+  z-index: 1;
+}
+
+#button4 {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  top: 150px;
+  left: -2px;
+  z-index: 1;
+}
+
+#shadow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 400px solid rgba(0, 0, 0, 0.200);
+  border-left: 240px solid transparent;
+  z-index: 10; 
+
+}
+
+
+#pot {
+  position: absolute;
+  border-top: 50px solid rgb(88, 67, 34);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 30px;
+  border-radius: 5px;
+  left: 225px;
+  top: 340px;
+}
+
+:root {
+  --leaf-size: 40px;
+}
+
+#Pplant {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 230px;
+  top: 305px;
+}
+
+
+#plant {
+  position: absolute;
+  transform: rotate(-10deg);
+  width: var(--leaf-size);
+  height: var(--leaf-size);
+  background: rgba(112, 185, 112, 0.733);
+  border-radius: var(--leaf-size) 0;
+  left: 15px;
+}
+
+#plant1 {
+  position: absolute;
+  transform: rotate(10deg);
+  width: var(--leaf-size);
+  height: var(--leaf-size);
+  background: rgba(112, 185, 112, 0.733);
+  border-radius:0 var(--leaf-size);
+  left: -15px;
+}
+
+#plant2 {
+  position: absolute;
+  transform: rotate(-45deg);
+  width: var(--leaf-size);
+  height: var(--leaf-size);
+  background: rgba(112, 185, 112, 0.733);
+  border-radius: var(--leaf-size) 0;
+}
+
+#switch-parent {
+  position: absolute;
+  height: 560px;
+  width: 240px;
+  /* transform: rotate(90deg);
+  left: 300px; */
+}
+
+#switch{
+  position: relative;
+  height: 540px;
+  width: 220px;
+  top: 10px;
+  left: 10px;
+}
+
+#switch-middle {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  background-color: rgb(102, 102, 102);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+#screen-mid {
+  position: relative;
+  width: 180px;
+  height: 375px;
+  background-color: rgb(0, 0, 0);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+}
+
+#screen {
+  position: relative;
+  width: 150px;
+  height: 330px;
+  background-color: rgb(53, 53, 53);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#joycon1 {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background-color: rgb(80, 170, 255);
+  left: 50%;
+  transform: translate(-50%);
+  top:-390px;
+  border-radius: 40px 40px 0 0;
+}
+
+#joycon2 {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background-color: rgb(255, 183, 74);
+  left: 50%;
+  transform: translate(-50%);
+  top: 10px;
+  border-radius: 0 0 40px 40px;
+}
+
+#stick1 {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 15px;
+  left: 125px;
+}
+
+#stick2 {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 15px;
+  left: 45px;
+}
+
+
+
+
+.box {
+  position: relative;
+  height: 580px;
+  width: 300px;
+}
+
+.right {
+  float: right;
+}
+
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.round-corner {
+  border-radius: 10px;
+}
+
+.black-spacing-top {
+  position: relative;
+  height: 10px;
+  width: 940px;
+}
+
+.black-spacing-middle {
+  height: 580px;
+  width: 10px;
+}
+
+.border {
+  border: 10px solid black;
+}
+
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.brown {
+  background-color: rgb(133, 74, 25);
+}
+
+.azure {
+  background-color: azure;
+}
+
+.teal {
+  background-color: rgb(122, 226, 226);
+}
+
+.phone-color {
+  background-color: rgb(122, 226, 162);
+}
+
+.phone-button {
+  background-color: rgb(131, 209, 161);
+}
+
+.yellow {
+  background-color: rgb(255, 255, 108);
+}
+
+.orange {
+  background-color: orange;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.red {
+  background-color: rgb(255, 136, 136);
+}
+
+.green {
+  background-color: green;
+}
+
+.white {
+  background-color: white;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
