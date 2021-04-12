@@ -4,6 +4,131 @@ body {
   background: lavenderblush;
 }
 
+@font-face {
+  font-family: Minecraft;
+  src: url(Minecraft.ttf);
+}
+
+#bar-1 {
+  position: relative;
+  height: 500px;
+  width: auto;
+  background-color: lightgreen;
+}
+
+#bar-2 {
+  height: 500px;
+  width: auto;
+  background-color: darkgreen;
+}
+
+#zacharyleong {
+  font-family: Minecraft;
+  font-size: 60px;
+  transform: rotate(-90deg);
+  text-align: center;
+  color: white;
+}
+
+#switch-parent {
+  position: absolute;
+  height: 560px;
+  width: 240px;
+  transform: rotate(90deg) scale(2);
+}
+
+#switch{
+  position: relative;
+  height: 540px;
+  width: 220px;
+  top: 10px;
+  left: 10px;
+}
+
+#switch-middle {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  background-color: rgb(102, 102, 102);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+#screen-mid {
+  position: relative;
+  width: 180px;
+  height: 375px;
+  background-color: rgb(0, 0, 0);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+}
+
+#screen {
+  position: relative;
+  width: 150px;
+  height: 330px;
+  background-color: rgb(53, 53, 53);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#joycon1 {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background-color: rgb(255, 80, 80);
+  left: 50%;
+  transform: translate(-50%);
+  top:-390px;
+  border-radius: 40px 40px 5px 5px;
+  display: flex;
+  align-items: center;
+}
+
+#joycon2 {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background-color: rgb(70, 198, 255);
+  left: 50%;
+  transform: translate(-50%);
+  top: 10px;
+  border-radius: 5px 5px 40px 40px;
+  display: flex;
+  align-items: center;
+}
+
+#stick1 {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 100px;
+  
+}
+
+#stick2 {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 45px; 
+}
+
+
+
+
+
+
+
+
+
+/* CLASSES */
+
 .container {
   position: absolute;
   width: 60%;
@@ -12,36 +137,71 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.toc-container {
-  background: #f2dff7;
-  padding: 32px;
-  line-height: 36px;
-  font-size: 22px;
-  position: relative;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header {
-  text-transform: uppercase;
-  color: darkslateblue;
-  height: 40px;
-  margin-bottom: 50px;
-  font-family: 'Kosugi Maru', sans-serif;
-  text-align: center;
+.border {
+  border: 10px solid black;
 }
 
-ul {
-  margin: 0px;
+.right {
+  float: right;
 }
 
-ul li {
-  list-style-type: decimal-leading-zero;
+.circle {
+  border-radius: 50%;
+  display: inline-block;
 }
 
-a, a:visited {
-  color: black;
-  text-decoration: none;
+.round-corner {
+  border-radius: 10px;
 }
 
-a:hover {
-  text-decoration: underline;
+/* colors */
+
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.brown {
+  background-color: rgb(133, 74, 25);
+}
+
+.azure {
+  background-color: azure;
+}
+
+.teal {
+  background-color: rgb(122, 226, 226);
+}
+
+.yellow {
+  background-color: rgb(255, 255, 108);
+}
+
+.orange {
+  background-color: orange;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.red {
+  background-color: rgb(255, 136, 136);
+}
+
+.green {
+  background-color: green;
+}
+
+.white {
+  background-color: white;
 }
