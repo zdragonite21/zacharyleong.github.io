@@ -1,7 +1,13 @@
+/* Setup */
+
 body {
   margin: 0px;
   font-family: 'Inconsolata', monospace;
   background: lavenderblush;
+}
+
+:root {
+  --leaf-size: 40px;
 }
 
 @font-face {
@@ -10,6 +16,7 @@ body {
 }
 
 #bar-1 {
+  
   position: relative;
   height: 500px;
   width: auto;
@@ -17,9 +24,50 @@ body {
 }
 
 #bar-2 {
-  height: 500px;
+  position: relative;
+  height: 100px;
   width: auto;
-  background-color: darkgreen;
+  background-color: rgb(255, 255, 255);
+  border-top: 10px double black;
+  border-bottom: 10px double black;
+  overflow: hidden;
+}
+
+#bar-3 {
+  position: relative;
+  height: 700px;
+  width: auto;
+  background-color: rgb(144, 235, 238);
+}
+
+#bar-3-sub-1 {
+  position: relative;
+  height: 700px;
+  width: 49.5%;
+}
+
+#bar-3-sub-2 {
+  position: relative;
+  height: 700px;
+  width: 1%;
+  background-color: rgb(0, 0, 0);
+}
+
+#bar-3-sub-3 {
+  position: relative;
+  height: 700px;
+  width: 49.5%;
+  background-color: rgb(255, 123, 123);
+}
+
+#bar-4 {
+  position: relative;
+  height: 300px;
+  width: auto;
+  border-top: 10px dotted black;
+  border-bottom: 10px dotted black;
+  display: flex;
+  align-items: center;
 }
 
 #zacharyleong {
@@ -29,6 +77,231 @@ body {
   text-align: center;
   color: white;
 }
+
+#crane {
+  position: absolute;
+  width: 10000px;
+  height: 200px;
+  transform: scale(0.7);
+  background: url(cranehtml.png);
+  background-repeat: repeat-x;
+}
+
+/* Phone charger */
+
+#Pcharger {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  background-color: rgb(162, 248, 150);
+}
+
+#charger-cable {
+  position: relative;
+  width: 400px;
+  height: 30px;
+  background-color: white;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 98%,  rgb(0, 0, 0)), linear-gradient(rgb(61, 61, 61),rgb(151, 151, 151),rgb(61, 61, 61));
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+#charger-cone {
+  position: absolute;
+  border-right: 100px solid rgb(0, 0, 0);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  height: 40px;
+  width: 0;
+  left: 400px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  border-radius: 3px;
+}
+
+
+
+
+/* Workspace */
+
+#work-canvas {
+  position: relative;
+  height: 580px;
+  width: 300px;
+  transform: scale(1.5);
+  top: 100px;
+  left: -15%;
+}
+
+#message-comp {
+  position: absolute;
+  height: 580px;
+  width: 30vh;
+  left: 30vh;
+  background-color: rgb(240, 255, 102);
+}
+
+#computer {
+  height: 100px;
+  width: 150px;
+}
+
+#computer1 {
+  position: relative;
+  height: 85px;
+  width: 135px;
+  left: 7.5px;
+  top: 7.5px;
+  background-color: rgb(73, 73, 73);
+}
+
+#computer2 {
+  position: relative;
+  height: 20px;
+  width: 150px;
+  border-radius: 0px 0px 10px 10px;
+  z-index: 1;
+}
+
+#computer3 {
+  position: relative;
+  height: 40px;
+  width: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 320px;
+  left: -30px;
+}
+
+#computer4 {
+  position: relative;
+  height: 10px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 320px;
+  left: -30px;
+}
+
+#computerdot {
+  height: 10px;
+  width: 10px
+}
+
+#computerdot2 {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  left: 117.5px;
+  top: 233px;
+}
+
+#desk {
+  position: relative;
+  height: 20px;
+  width: 10000px;
+  top: 320px;
+  z-index: 1;
+  left: -500px;
+}
+
+#main {
+  position: absolute;
+  height: 580px;
+  width: 300px;
+  left: -30px;
+}
+
+#clock {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 10px solid rgb(218, 86, 86);
+  left: 150px;
+  top: 30px;
+}
+
+#clock-dot {
+  position: relative;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 34px;
+}
+
+#hourhand {
+  position: relative;
+  height:5px;
+  width: 40px;
+  border-radius: 5px;
+  top: 45px;
+  left: 50px;
+}
+
+#minhand {
+  position: relative;
+  height:4.5px;
+  width: 45px;
+  border-radius: 5px;
+  transform: rotate(300deg);
+  top: 60px;
+  left: 16px;
+}
+
+#Pplant {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 230px;
+  top: 305px;
+}
+
+#plant {
+  position: absolute;
+  transform: rotate(-10deg);
+  width: var(--leaf-size);
+  height: var(--leaf-size);
+  background: rgba(112, 185, 112, 0.733);
+  border-radius: var(--leaf-size) 0;
+  left: 15px;
+}
+
+#plant1 {
+  position: absolute;
+  transform: rotate(10deg);
+  width: var(--leaf-size);
+  height: var(--leaf-size);
+  background: rgba(112, 185, 112, 0.733);
+  border-radius:0 var(--leaf-size);
+  left: -15px;
+}
+
+#plant2 {
+  position: absolute;
+  transform: rotate(-45deg);
+  width: var(--leaf-size);
+  height: var(--leaf-size);
+  background: rgba(112, 185, 112, 0.733);
+  border-radius: var(--leaf-size) 0;
+}
+
+#pot {
+  position: absolute;
+  border-top: 50px solid rgb(88, 67, 34);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 30px;
+  border-radius: 5px;
+  left: 225px;
+  top: 340px;
+}
+
+
+/* Switch  */
 
 #switch-parent {
   position: absolute;
@@ -151,6 +424,10 @@ body {
   float: right;
 }
 
+.left {
+  float: left;
+}
+
 .circle {
   border-radius: 50%;
   display: inline-block;
@@ -158,6 +435,10 @@ body {
 
 .round-corner {
   border-radius: 10px;
+}
+
+.hide {
+  overflow: hidden;
 }
 
 /* colors */
