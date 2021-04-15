@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Variable Reassignment</title>
+    <title>Random Word and Image Generator</title>
 
 
     
@@ -63,40 +63,48 @@
 
     <style>
       body {
-        background-color: antiquewhite;
+        background-color: rgb(245, 170, 170);
       }
 
       #interactive-div {
-        background: #a1da73;
+        background: #78da29;
         position: relative;
-        width: 400px;
-        height: 200px;
+        width: 550px;
+        height: 150px;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 40px;
-        border: 10px double rgb(241, 241, 152);
-        box-shadow: 7px 7px 3px black;
+        border-radius: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: linear-gradient(90deg, rgb(109, 109, 109),transparent 3% 98%, rgb(92, 92, 92)), linear-gradient(black, rgba(255, 255, 255, 0.534) 5%, #bbfc87 15%, rgb(79, 143, 79) 90%, black);
+        /* border: 3px solid black; */
+        top: 20px;
+        /* background-image: linear-gradient(45deg,rgb(94, 185, 94), rgb(142, 212, 96) 20% 50%, rgb(173, 253, 44)); */
       }
 
       #click-me {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: rgba(0, 0, 0, 0.685);
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba(255, 255, 255, 255);
         font-size: 70px;
-        
+        font-weight: bold;
       }
 
       #words {
+        font-family: Arial, Helvetica, sans-serif;
         color: black;
         text-align: center;
         font-size: 100px;
       }
       
       #one {
-        margin-top: auto;
+        position: relative;
+        max-width: 450px;
+        max-height:450px;
+        /* border: 10px solid rgb(0, 0, 0); */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        top: -50px;
       }
 
       .unselectable {
@@ -109,12 +117,12 @@
       }
     </style>
     <p id="words" class="unselectable">Random Word Generator</p>
+    <img src="https://www.thesprucepets.com/thmb/KYaXBSM013GnZ2jEZJnX4a9oIsU=/3865x2174/smart/filters:no_upscale()/horse-galloping-in-grass-688899769-587673275f9b584db3a44cdf.jpg" id="one">
 
     <div id="interactive-div">
-      <div id="click-me" class="unselectable">Click me!</div>
+      <div id="click-me" class="unselectable">GENERATE</div>
     </div>
 
-    <img src="https://www.thesprucepets.com/thmb/KYaXBSM013GnZ2jEZJnX4a9oIsU=/3865x2174/smart/filters:no_upscale()/horse-galloping-in-grass-688899769-587673275f9b584db3a44cdf.jpg" id="one">
 
   </body>
 </html>
