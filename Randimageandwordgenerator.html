@@ -1,0 +1,120 @@
+<!-- /exercises/01-js-variables.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variable Reassignment</title>
+
+
+    
+  </head>
+  <body>
+
+    <h1></h1>
+    <script src="test.js"></script>
+    <script>
+        let elem;
+
+        var x;
+        //window.onload = init; //not recommended
+        window.addEventListener('load', init);
+        
+        function init() {
+            
+            elem = document.getElementById('interactive-div');
+            elem.addEventListener('click', function() {
+            x = Math.floor(Math.random() * 194432);
+            document.getElementById("words").innerHTML = words[x];
+
+            var query = words[x];
+
+            // Technically, Google wants you to to register yourself as an application to use their search, but you can just use mine (KEY and CX below)
+            const KEY = 'AIzaSyAbN5opB6x2HVmfXP5E10SEVjN7K9yZQO0';
+            const CX = '011476009962251898743:ulicglunr7o';
+
+            // We're making the url to search at
+            const url = `https://www.googleapis.com/customsearch/v1?cx=${CX}&key=${KEY}&searchType=image&q=${query}` // <-- be sure to put your word here at the end after q=
+
+            // We're saying "Hey google, I want some pictures plz"
+            fetch(url)
+            // the ".then" is saying "once you found them, then give them to me"
+            // This is kind of similar to an event listener in that it doesn't happen right away; it waits for the data to come back. Just like our button listener waits for someone to press the button.
+            .then(function(response) {
+            // I want it as a JS object, not as HTML
+                return response.json() 
+            })
+            .then(function(data) {
+                // "data" is the JS object version
+
+                // I put this in so you can see in the browser console what google returns to you
+                // See if you can explore it and find the pictures. Let me know if you need more help
+                // console.log(data);
+
+                // Your code to change the image goes here!
+              console.log(data.items[0].link);
+              document.getElementById("one").src = data.items[0].link;
+
+            })
+
+          });
+        }
+
+
+    </script>
+
+    <style>
+      body {
+        background-color: antiquewhite;
+      }
+
+      #interactive-div {
+        background: #a1da73;
+        position: relative;
+        width: 400px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 40px;
+        border: 10px double rgb(241, 241, 152);
+        box-shadow: 7px 7px 3px black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(90deg, rgb(109, 109, 109),transparent 3% 98%, rgb(92, 92, 92)), linear-gradient(black, rgba(255, 255, 255, 0.534) 5%, #bbfc87 15%, rgb(79, 143, 79) 90%, black);
+      }
+
+      #click-me {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgba(0, 0, 0, 0.685);
+        font-size: 70px;
+        
+      }
+
+      #words {
+        color: black;
+        text-align: center;
+        font-size: 100px;
+      }
+      
+      #one {
+        margin-top: auto;
+      }
+
+      .unselectable {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+    </style>
+    <p id="words" class="unselectable">Random Word Generator</p>
+
+    <div id="interactive-div">
+      <div id="click-me" class="unselectable">Click me!</div>
+    </div>
+
+    <img src="https://www.thesprucepets.com/thmb/KYaXBSM013GnZ2jEZJnX4a9oIsU=/3865x2174/smart/filters:no_upscale()/horse-galloping-in-grass-688899769-587673275f9b584db3a44cdf.jpg" id="one">
+
+  </body>
+</html>

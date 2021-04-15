@@ -91,7 +91,7 @@ body {
 
 #Pcharger {
   position: relative;
-  width: 500px;
+  width: 650px;
   height: 200px;
   background-color: rgb(162, 248, 150);
 }
@@ -108,15 +108,38 @@ body {
 
 #charger-cone {
   position: absolute;
-  border-right: 100px solid rgb(0, 0, 0);
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
+  border-right: 130px solid linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.253)), linear-gradient(45deg, transparent 70%, rgba(0, 0, 0, 0.192)), linear-gradient(rgb(54, 54, 54),rgb(158, 158, 158) 10%, rgb(71, 71, 71) 20% 90%, rgb(110, 110, 110) 95%, black);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
   height: 40px;
   width: 0;
   left: 400px;
   top: 50%;
   transform: translate(0%, -50%);
+  
+  /* border-radius: 3px; */
+}
+
+#charger-box {
+  position: absolute;
+  height: 70px;
+  width: 170px;
+  left: 530px;
+  top: 50%;
+  transform: translate(0%, -50%);
   border-radius: 3px;
+  background-image: linear-gradient(90deg, transparent 98%, rgba(255, 255, 255, 0.253)), linear-gradient(45deg, transparent 70%, rgba(0, 0, 0, 0.192)), linear-gradient(rgb(54, 54, 54),rgb(158, 158, 158) 10%, rgb(71, 71, 71) 20% 90%, rgb(110, 110, 110) 95%, black);
+}
+
+#charger-tip {
+  position: absolute;
+  height: 50px;
+  width: 40px;
+  left: 700px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  border-radius: 0 4px 4px 0;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent 15% 90%, rgba(255, 255, 255, 0.192)), linear-gradient(rgb(61, 61, 61), rgb(245, 245, 229) 10%, rgb(198, 199, 153) 20% 88%, rgb(75, 75, 75), black);
 }
 
 
