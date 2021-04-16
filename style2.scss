@@ -1,0 +1,11 @@
+$r: rgb(255,0,0);
+
+
+#charger-cone2 {
+    background-repeat: no-repeat;
+    font-size: 10px;
+    outline: 1px solid #aaa;
+    width: 24em;
+    height: 24em;
+    background: linear-gradient($r, $r) 50% 50% / 8em 8em;
+}
