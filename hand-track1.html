@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs@0.0.13/dist/handtrack.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      @font-face {
+        font-family: Future;
+        src: url(sofachrome\ rg.ttf);
+      }
+
+      @font-face {
+        font-family: Past;
+        src: url(Canterbury.ttf);
+      }
+
+      video {
+        display: none;
+        object-fit: cover;
+      }
+      
+      #left,
+      #right {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background: #fff
+      }
+
+      .future {
+        font-family: Future;
+        color: black;
+        font-size: 100px;
+      }
+
+      .past {
+        font-family: Past;
+        color: black;
+        font-size: 100px;
+      }
+    </style>
+ </head>
+
+  <body>
+    <h1> future//past </h1>
+    <div class="future">FUTURE</div>
+    <div class="past">PAST</div>
+  </body>
+
+</html>

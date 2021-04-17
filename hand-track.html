@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs@0.0.13/dist/handtrack.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      video {
+        display: none;
+        object-fit: cover;
+      }
+      
+      #left,
+      #right {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background: #fff
+      }
+    </style>
+ </head>
+
+  <body>
+    <h1> future//past </h1>
+    <canvas id="canvas"></canvas>
+    <video id="stream" autoplay height="720" width="1280"></video>
+    <div id="left"></div>
+    <div id="right"></div>
+  </body>
+  <script>
+    let canvas = document.getElementById('canvas');
+    let context = canvas.getContext('2d');
+    let video = document.getElementById('stream');
+    let model = null;
+    let modelParams = {
+      flipHorizontal: true,
+      maxNumBoxes: 20,
+      iouThreshold: 0.5,
+      scoreThreshold: 0.6
+    };
+    let left = document.getElementById('left');
+    let right = document.getElementById('right');
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        video.srcObject = stream;
+      }).catch(function(err) {
+        console.log(err);
+    });
+
+    function track() {
+      model.detect(video).then(function(pred) {
+        console.log(pred);
+        if (pred[0] && pred[0].score > .8) {
+          left.style.display = 'block';
+          left.style.left = 'calc(1280px/100v * ' + pred[0].bbox[0] + 'px)';
+          left.style.top = pred[0].bbox[1] + "px";
+          left.style.width = pred[0].bbox[2] + "px";
+          left.style.height = pred[0].bbox[3] + "px";
+        } else {
+          left.style.display = 'none';
+        }
+        if (pred[1] && pred[1].score > .8) {
+          right.style.display = 'block';
+          right.style.left = pred[1].bbox[0] + "px";
+          right.style.top = pred[1].bbox[1] + "px";
+          right.style.width = pred[1].bbox[2] + "px";
+          right.style.height = pred[1].bbox[3] + "px";
+        } else {
+          right.style.display = 'none';
+        }
+        model.renderPredictions(pred, canvas, context, video);
+//         for (let i = 0; i < pred.length; i++) {
+          
+//           // let div = document.createElement('div');
+//           // div.style.top = pred[i].bbox[0] + 'px';
+//           // div.style.left = pred[i].bbox[1] + 'px';
+//           // div.style.width = pred[i].bbox[2] + 'px';
+//           // div.style.height = pred[i].bbox[3] + 'px';
+//           // document.body.appendChild(div);
+//           // context.fillStyle = 'green';
+//           // context.fillRect(
+//           //   pred[i].bbox[0],
+//           //   pred[i].bbox[1],
+//           //   pred[i].bbox[2],
+//           //   pred[i].bbox[3]
+//           // );
+//         }
+        requestAnimationFrame(track);
+      });
+    }
+
+    video.addEventListener('play', function() {
+      handTrack.load(modelParams).then(function(lmodel) {
+        console.log(model);
+        model = lmodel;
+        track();
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,179 @@
+<html>
+  <head>
+    <title>past//future</title>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs@0.0.13/dist/handtrack.min.js"></script>
+    <style>
+      body {
+        font-family: helvetica, arial, sans-serif;
+        margin: 2em;
+        background: rgb(0,0,0);
+        
+      }
+
+      @font-face {
+        font-family: Future;
+        src: url(https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fsofachrome%20rg.ttf?v=1618696699609);
+      }
+
+      @font-face {
+        font-family: Past;
+        src: url(https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2FCanterbury.ttf?v=1618696692230);
+      }
+      
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      video {
+        display: none;
+      }
+      
+      #left,
+      #right {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-image: url('https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fiphone-12-pro.png?v=1618695053845');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      
+      .text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .future {
+/*         position: absolute; */
+        font-family: Future;
+        color: white;
+        font-size: 90px;
+/*         left: 50%;
+        top: 2%; */
+      }
+
+      .past {
+/*         position: absolute; */
+        font-family: Past;
+        color: white;
+        font-size: 120px;
+/*         left: 0%;
+        top: 2%; */
+      }
+    </style>
+ </head>
+
+  <body>
+    <div class="text">
+      <div class="past">PAST</div>
+      <div class="future">FUTURE</div>
+    </div>
+    <div class="center">
+      <canvas id="canvas"></canvas>
+    </div>
+    <video id="stream" autoplay height="720" width="1280"></video>
+    <div id="left"></div>
+    <div id="right"></div>
+    
+  </body>
+  <script>
+    let canvas = document.getElementById('canvas');
+    let context = canvas.getContext('2d');
+    let video = document.getElementById('stream');
+    let model = null;
+    let modelParams = {
+      flipHorizontal: true,
+      maxNumBoxes: 20,
+      iouThreshold: 0.5,
+      scoreThreshold: 0.6
+    };
+    let left = document.getElementById('left');
+    let right = document.getElementById('right');
+    
+    let oldUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fphone_old.png?v=1618696653000")';
+    
+    let newUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fiphone-12-pro.png?v=1618695053845")';
+    
+    
+    let browserWidth = window.innerWidth;
+    window.addEventListener('resize', function() {
+      browserWidth = window.innerWidth;
+    });
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        video.srcObject = stream;
+      }).catch(function(err) {
+        console.log(err);
+    });
+
+    document.addEventListener("keyup", function(evt) {
+      if (evt.keyCode === 49) {
+        oldUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fphone_old.png?v=1618696653000")';
+    
+        newUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fiphone-12-pro.png?v=1618695053845")';
+      }
+      
+      else if (evt.keyCode === 50) {
+        oldUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fspeaker3.png?v=1618695649795")';
+    
+        newUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fspeaker2.png?v=1618694541382")';
+      }
+      
+      else if (evt.keyCode === 51) {
+        oldUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fcamera1.png?v=1618696027681")';
+    
+        newUrl = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fcamera2.png?v=1618695968984")';
+      }
+    });
+    
+    
+    function track() {
+      model.detect(video).then(function(pred) {
+        if (pred[0] && pred[0].score > .8) {
+          left.style.display = 'block';
+          left.style.left = pred[0].bbox[0] + 'px';
+          left.style.top = pred[0].bbox[1] + 'px';
+          left.style.width = pred[0].bbox[2] + 'px';
+          left.style.height = pred[0].bbox[3] + 'px';
+          if (pred[0].bbox[0] < browserWidth / 2) {
+            // left.style.backgroundImage = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fphone_old.png?v=1618696653000")';
+            left.style.backgroundImage = oldUrl;
+          } else if (pred[0].bbox[0] > browserWidth / 2) {
+            // left.style.backgroundImage = 'url("https://cdn.glitch.com/ca1a25a9-5b7c-4c34-887b-543b29e64e8e%2Fiphone-12-pro.png?v=1618695053845")';
+            left.style.backgroundImage = newUrl;
+          }
+        } else {
+          left.style.display = 'none';
+        }
+        // model.renderPredictions(pred, canvas, context, video);
+        // if (pred[1] && pred[1].score > .8) {
+        //   right.style.display = 'block';
+        //   right.style.left = pred[1].bbox[0] + 'px';
+        //   right.style.top = pred[1].bbox[1] + 'px';
+        //   right.style.width = pred[1].bbox[2] + 'px';
+        //   right.style.height = pred[1].bbox[3] + 'px';
+        // } else {
+        //   right.style.display = 'none';
+        // }
+        requestAnimationFrame(track);
+      });
+    }
+
+    video.addEventListener('play', function() {
+      handTrack.load(modelParams).then(function(lmodel) {
+        model = lmodel;
+        track();
+      });
+    });
+  </script>
+</html>
